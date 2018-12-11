@@ -2,6 +2,7 @@
   <div>
     <p>home</p>
     <mt-button type="primary">primary</mt-button>
+    <hr>
     <v-touch v-on:swipeleft="onSwipeLeft">Swipe me!</v-touch>
   </div>
 </template>
@@ -14,4 +15,3 @@ export default {
   }
 };
 </script>
-

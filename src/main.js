@@ -11,7 +11,9 @@ Vue.component(Button.name, Button);
 
 Vue.config.productionTip = false;
 Vue.use(VueTouch, { name: "v-touch" });
-let vConsole = new VConsole();
+
+/* eslint-disable no-new */
+new VConsole();
 
 /* eslint-disable no-new */
 new Vue({
