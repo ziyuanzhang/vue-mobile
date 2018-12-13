@@ -16,7 +16,7 @@ Vue.config.productionTip = false;
 Vue.use(VueTouch, { name: "v-touch" });
 Vue.use(VueI18n);
 
-Vue.prototype.axios = axios;
+Vue.prototype.$http = axios;
 //configAxios(axios);
 
 const i18n = new VueI18n({
