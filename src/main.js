@@ -6,6 +6,8 @@ import router from "./router";
 import { Button } from "mint-ui";
 import VueTouch from "vue-touch";
 import VueI18n from "vue-i18n";
+import axios from "axios";
+//import configAxios from "./common/configAxios";
 
 import VConsole from "vconsole/dist/vconsole.min.js";
 Vue.component(Button.name, Button);
@@ -13,6 +15,9 @@ Vue.component(Button.name, Button);
 Vue.config.productionTip = false;
 Vue.use(VueTouch, { name: "v-touch" });
 Vue.use(VueI18n);
+
+Vue.prototype.axios = axios;
+//configAxios(axios);
 
 const i18n = new VueI18n({
   locale: "zh", // 语言标识
