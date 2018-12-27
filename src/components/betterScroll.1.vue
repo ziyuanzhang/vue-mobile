@@ -12,7 +12,7 @@
           ref="liLeft"
         >
           <!--  -->
-          <span class="text border-1px">{{item.sortDescript}}</span>
+          <span class="text border-1px">{{item.name}}</span>
         </li>
       </ul>
     </div>
@@ -22,12 +22,12 @@
         <li v-for="(item,index) of goods" class="food-list food-list-hook" :key="index">
           <h1 class="title">{{item.name}}</h1>
           <ul>
-            <li v-for="(food,index) of item.pluAllList" :key="index" class="food-item border-1px">
+            <li v-for="(food,index) of item.foods" :key="index" class="food-item border-1px">
               <div class="icon">
                 <img width="57px" height="57px" :src="food.icon">
               </div>
               <div class="content">
-                <h2 class="name">{{food.pluDescript}}</h2>
+                <h2 class="name">{{food.name}}</h2>
                 <p v-show="food.description" class="description">{{food.description}}</p>
                 <div class="data">
                   <span class="count">月售{{food.sellCount}}份</span>
@@ -48,7 +48,7 @@
 
 <script type='text/ecmascript-6'>
 import BScroll from "better-scroll";
-import data from "./data2.js";
+import data from "./data.js";
 
 export default {
   props: {
@@ -132,7 +132,7 @@ export default {
     _initLeftScroll(index) {
       console.log(index);
       let menu = this.$refs.liLeft;
-      let el = menu[index];
+      let el = menu[index - 4];
       this.menuScroll.scrollToElement(el, 300);
     }
   }
@@ -265,6 +265,6 @@ export default {
   }
 }
 .food-list {
-  // height: 100px;
+  height: 100px;
 }
 </style>

@@ -20,7 +20,6 @@ export default {
     },
     sendFun: function() {
       // 取消上一次请求
-
       this.cancelRequest();
 
       this.ajaxFun({ key: "value" })

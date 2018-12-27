@@ -3,6 +3,7 @@
     <h1>header</h1>
     <router-link to="/">home</router-link>
     <router-link to="axiosRequest">axiosRequest</router-link>
+    <router-link to="betterScroll">betterScroll</router-link>
   </div>
 </template>
 <style lang="less" scoped>
