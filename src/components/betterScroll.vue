@@ -51,11 +51,6 @@ import BScroll from "better-scroll";
 import data from "./data2.js";
 
 export default {
-  props: {
-    seller: {
-      type: Object
-    }
-  },
   data() {
     return {
       goods: [], // 获取data.json中的goods数据，json里面是数组形式。

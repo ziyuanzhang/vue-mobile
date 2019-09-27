@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>home</p>
+    <p>home--</p>
     <mt-button type="primary">primary</mt-button>
     <hr>
     <div class="touch-container">
