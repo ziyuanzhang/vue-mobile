@@ -1,14 +1,14 @@
 <template>
   <div>
-    <p>home--</p>
+    <p>home--jenkins</p>
     <mt-button type="primary">primary</mt-button>
-    <hr>
+    <hr />
     <div class="touch-container">
       <v-touch v-on:swipeleft="onSwipeLeft">Swipe me!</v-touch>
     </div>
     <h1 style="font-size: 16px; text-align: center;">{{$t("message.title")}}</h1>
     <button type="button" class="btn btn-success" @click="changeLocale">中文/EN</button>
-    <hr>
+    <hr />
   </div>
 </template>
 <script>
