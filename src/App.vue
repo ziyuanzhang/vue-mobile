@@ -1,7 +1,7 @@
 <template>
-  <div id="app">
+  <div id="app" class="theme">
     <v-header></v-header>
-    <router-view/>
+    <router-view />
     <v-footer></v-footer>
   </div>
 </template>
@@ -18,13 +18,19 @@ export default {
 };
 </script>
 
-<style>
+<style lang="less">
+@import url("./assets/theme.less");
+.theme {
+  .theme(); //默认的样式
+}
+.themered {
+  .theme(red, red);
+}
+.themegreen {
+  .theme(green, red);
+}
+
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  box-sizing: border-box;
 }
 </style>

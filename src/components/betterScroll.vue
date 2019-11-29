@@ -24,7 +24,7 @@
           <ul>
             <li v-for="(food,index) of item.pluAllList" :key="index" class="food-item border-1px">
               <div class="icon">
-                <img width="57px" height="57px" :src="food.icon">
+                <img width="57px" height="57px" :src="food.icon" />
               </div>
               <div class="content">
                 <h2 class="name">{{food.pluDescript}}</h2>
@@ -137,10 +137,11 @@ export default {
 .goods {
   display: flex;
   position: absolute;
-  top: 174px;
+  top: 80px;
   bottom: 56px;
   width: 100%;
   overflow: hidden;
+  border-top: 2px solid red;
 
   .menu-wrapper {
     flex: 0 0 80px;

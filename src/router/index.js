@@ -3,6 +3,7 @@ import Router from "vue-router";
 import home from "@/components/home";
 import axiosRequest from "@/components/axiosRequest";
 import betterScroll from "@/components/betterScroll";
+import changeTheme from "@/components/changeTheme";
 
 Vue.use(Router);
 
@@ -22,6 +23,11 @@ export default new Router({
       path: "/betterScroll",
       name: "betterScroll",
       component: betterScroll
+    },
+    {
+      path: "/changeTheme",
+      name: "changeTheme",
+      component: changeTheme
     }
   ]
 });
