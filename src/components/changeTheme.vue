@@ -21,7 +21,11 @@
       <div class="demo2"></div>
     </div>
     <div class="container">
-      <h1>换色3--用less.js</h1>
+      <h1>
+        <span>换色3--用less.js</span>
+        <input type="color" value="#04be02" @change="colorchange($event)" />
+      </h1>
+
       <div
         class="item"
         v-for="(item,index) in list"
@@ -34,19 +38,11 @@
 </template>
 
 <script>
-import axios from "axios";
 export default {
   data() {
     return {
       list: [{ name: "red", val: "red" }, { name: "green", val: "green" }]
     };
-  },
-  created() {},
-  mounted() {
-    let url = "http://cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js";
-    axios.get(url).then(res => {
-      //console.log("url:", res.data);
-    });
   },
   methods: {
     changeThemefun(val) {
@@ -64,7 +60,17 @@ export default {
       window.less
         .modifyVars({
           // 调用 `less.modifyVars` 方法来改变变量值
-          "@bg-color": "#2f54eb"
+          "@bg-color": val
+        })
+        .then(() => {
+          console.log("修改成功");
+        });
+    },
+    colorchange(val) {
+      console.log("colorchange:", val.target.value);
+      window.less
+        .modifyVars({
+          "@bg-color": val.target.value
         })
         .then(() => {
           console.log("修改成功");
@@ -75,18 +81,21 @@ export default {
 </script>
 <style lang="less" scoped>
 .changeTheme {
-  .title {
-    padding: 5px 0;
-    text-align: center;
-    height: 40px;
-  }
-  .item {
-    padding: 5px 0;
-  }
-  .demo2,
-  .demo3 {
-    width: 50px;
-    height: 50px;
+  .container {
+    margin-top: 20px;
+    .title {
+      padding: 5px 0;
+      text-align: center;
+      height: 40px;
+    }
+    .item {
+      padding: 5px 0;
+    }
+    .demo2,
+    .demo3 {
+      width: 50px;
+      height: 50px;
+    }
   }
 }
 </style>
