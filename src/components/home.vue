@@ -20,6 +20,7 @@ export default {
     changeLocale: function() {
       let locale = this.$i18n.locale;
       locale === "zh" ? (this.$i18n.locale = "en") : (this.$i18n.locale = "zh");
+      console.log(this.$t('message.title'))
     }
   }
 };
