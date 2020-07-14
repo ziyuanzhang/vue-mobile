@@ -17,7 +17,7 @@ export default {
   mounted() {
     this.setT = setTimeout(() => {
       clearTimeout(this.setT);
-      this.$el.parentNode.removeChild(this.$el);
+      this.cancelFun();
     }, this.duration);
   }
 };

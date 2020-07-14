@@ -14,6 +14,14 @@ const Toast = function (msg, duration = 2000) {
     if (instance) {
         document.body.appendChild(instance.$mount().$el);
     }
+    return new Promise((resolve, reject) => {
+        instance.cancelFun = () => {
+            if (instance) {
+                document.body.removeChild(instance.$mount().$el);
+                resolve('ok');
+            }
+        }
+    })
 };
 
 export default Toast
