@@ -15,7 +15,6 @@
     "better-scroll": "^1.13.2",
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
-    "mint-ui": "^2.2.13",
     "vconsole": "^3.2.0",
     "vue": "^2.5.2",
     "vue-i18n": "^8.4.0",

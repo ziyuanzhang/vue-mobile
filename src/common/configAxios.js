@@ -1,5 +1,6 @@
-import { Toast } from "mint-ui";
-export default function(axios) {
+import { Toast } from "@/components/global/toastJS";
+// eslint-disable-next-line
+export default function (axios) {
   axios.interceptors.request.use(
     config => {
       return config;
@@ -12,7 +13,7 @@ export default function(axios) {
   axios.interceptors.response.use(
     data => {
       if (data.status && data.status === 200 && data.data.status === "error") {
-        Toast({ message: data.data.msg });
+        // Toast({ message: data.data.msg });
         return;
       }
       return data;
