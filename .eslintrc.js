@@ -20,12 +20,17 @@ module.exports = {
   // add your custom rules here
   rules: {
     // allow async-await
-    "generator-star-spacing": "off",
+    'generator-star-spacing': 'off',
     // allow debugger during development
-    "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
-    semi: ["error", "always"],
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    semi: "off",
+    "space-before-function-paren": "off",
     quotes: "off",
-    "space-before-function-paren": ["error", "never"],
-    "spaced-comment": "off"
+    "indent": "off",
+    'eqeqeq': 'off',
+    "spaced-comment": 'off',
+    "no-unneeded-ternary": 'off',
+    "no-irregular-whitespace": "off",//这禁止掉 空格报错检查
+    'vue/no-parsing-error': [2, { "x-invalid-end-tag": false }]
   }
 };

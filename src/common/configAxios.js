@@ -1,5 +1,5 @@
-import { Toast } from "@/components/global/toastJS";
-// eslint-disable-next-line
+import Toast from "@/components/global/toastJS";
+
 export default function (axios) {
   axios.interceptors.request.use(
     config => {
