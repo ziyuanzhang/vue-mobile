@@ -1,6 +1,6 @@
 # vue-mobile
 
-##### 首页
+#### 首页
 
 - 添加手势插件(VueTouch)
 
@@ -62,5 +62,57 @@
       locale === "zh" ? (this.$i18n.locale = "en") : (this.$i18n.locale = "zh");
       console.log(this.$t("message.title"));
     }
-    console.log(this.$t("message.title"));
   ```
+
+#### 请求页
+
+    添加了 axios 的取消功能
+
+#### 请求页
+
+    1. 用 BScroll 插件实现滚动；
+    2. 根据右滚动的高度，计算左侧需要滚动的高度（注意溶差）
+
+#### 换主题页
+
+    1. 通过加载不通css
+    2. 通过改变root的class名字
+    3. 通过less.js的实现
+       + index.html 页引入
+          ```
+           <script src="../less.js/2.5.3/less.min.js"></script>
+
+           .demo3 {
+               background: @bg-color;
+             }
+          ```
+       + 应用页
+           ```
+             changeThemefun3(val) {
+               console.log("changeThemefun:", val);
+               window.less
+                 .modifyVars({
+                   // 调用 `less.modifyVars` 方法来改变变量值
+                   "@bg-color": val
+                 })
+                 .then(() => {
+                   console.log("修改成功");
+                 });
+             },
+          ```
+
+4. 通过 css 的自定义变量
+
+```css
+:root {
+  --bg-color: #ccc;
+}
+
+.demo4 {
+  background-color: var(--bg-color);
+}
+```
+
+```
+
+```
