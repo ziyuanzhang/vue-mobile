@@ -4,38 +4,50 @@
     <div class="menu-wrapper" ref="menuWrapper">
       <ul>
         <li
-          v-for="(item,index) of goods"
+          v-for="(item, index) of goods"
           :key="index"
           class="menu"
-          :class="{'current':currentIndex === index}"
+          :class="{ current: currentIndex === index }"
           @click="selectMenu(index)"
           ref="liLeft"
         >
           <!--  -->
-          <span class="text border-1px">{{item.name}}</span>
+          <span class="text border-1px">{{ item.sortDescript }}</span>
         </li>
       </ul>
     </div>
     <div class="foods-wrapper" ref="foodsWrapper">
       <ul>
         <!-- ...hook表示仅用于js操作选择，无表达效果。 -->
-        <li v-for="(item,index) of goods" class="food-list food-list-hook" :key="index">
-          <h1 class="title">{{item.name}}</h1>
+        <li
+          v-for="(item, index) of goods"
+          class="food-list food-list-hook"
+          :key="index"
+        >
+          <h1 class="title">{{ item.name }}</h1>
           <ul>
-            <li v-for="(food,index) of item.foods" :key="index" class="food-item border-1px">
+            <li
+              v-for="(food, index) of item.pluAllList"
+              :key="index"
+              class="food-item border-1px"
+            >
               <div class="icon">
-                <img width="57px" height="57px" :src="food.icon">
+                <img width="57px" height="57px" :src="food.icon" />
               </div>
               <div class="content">
-                <h2 class="name">{{food.name}}</h2>
-                <p v-show="food.description" class="description">{{food.description}}</p>
+                <h2 class="name">{{ food.pluDescript }}</h2>
+                <p v-show="food.description" class="description">
+                  {{ food.description }}
+                </p>
                 <div class="data">
-                  <span class="count">月售{{food.sellCount}}份</span>
-                  <span class="rating">好评率{{food.rating}}%</span>
+                  <span class="count">月售{{ food.sellCount }}份</span>
+                  <span class="rating">好评率{{ food.rating }}%</span>
                 </div>
                 <div class="price">
-                  <span class="new-price">￥{{food.price}}</span>
-                  <span v-show="food.oldPrice" class="old-price">￥{{food.oldPrice}}</span>
+                  <span class="new-price">￥{{ food.price }}</span>
+                  <span v-show="food.oldPrice" class="old-price"
+                    >￥{{ food.oldPrice }}</span
+                  >
                 </div>
               </div>
             </li>
@@ -46,16 +58,11 @@
   </div>
 </template>
 
-<script type='text/ecmascript-6'>
+<script type="text/ecmascript-6">
 import BScroll from "better-scroll";
-import data from "./data.js";
+import data from "@/assets/data/data2.js";
 
 export default {
-  props: {
-    seller: {
-      type: Object
-    }
-  },
   data() {
     return {
       goods: [], // 获取data.json中的goods数据，json里面是数组形式。
@@ -132,7 +139,7 @@ export default {
     _initLeftScroll(index) {
       console.log(index);
       let menu = this.$refs.liLeft;
-      let el = menu[index - 4];
+      let el = menu[index];
       this.menuScroll.scrollToElement(el, 300);
     }
   }
@@ -142,10 +149,11 @@ export default {
 .goods {
   display: flex;
   position: absolute;
-  top: 174px;
+  top: 50px;
   bottom: 56px;
   width: 100%;
   overflow: hidden;
+  border-top: 2px solid red;
 
   .menu-wrapper {
     flex: 0 0 80px;
@@ -263,8 +271,5 @@ export default {
       }
     }
   }
-}
-.food-list {
-  height: 100px;
 }
 </style>

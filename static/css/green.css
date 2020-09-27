@@ -1,6 +1,6 @@
-.changeTheme .title {
-  background-color: green;
-}
 .changeTheme .item {
   background-color: green;
+}
+:root {
+  --bg-color: green;
 }

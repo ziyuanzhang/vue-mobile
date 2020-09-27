@@ -10,6 +10,9 @@ export default {};
   bottom: 0px;
   z-index: 999;
   background: red;
+  line-height: 50px;
   height: 50px;
+  text-align: center;
+  width: 100%;
 }
 </style>

@@ -1,6 +1,6 @@
-.changeTheme .title {
-  background-color: #ccc;
-}
 .changeTheme .item {
   background-color: #ccc;
+}
+:root {
+  --bg-color: #ccc;
 }
