@@ -75,31 +75,34 @@
 
 #### 换主题页
 
-    1. 通过加载不通css
-    2. 通过改变root的class名字
-    3. 通过less.js的实现
-       + index.html 页引入
-          ```
-           <script src="../less.js/2.5.3/less.min.js"></script>
+1. 通过加载不通 css
+2. 通过改变 root 的 class 名字
+3. 通过 less.js 的实现
 
-           .demo3 {
-               background: @bg-color;
-             }
-          ```
-       + 应用页
-           ```
-             changeThemefun3(val) {
-               console.log("changeThemefun:", val);
-               window.less
-                 .modifyVars({
-                   // 调用 `less.modifyVars` 方法来改变变量值
-                   "@bg-color": val
-                 })
-                 .then(() => {
-                   console.log("修改成功");
-                 });
-             },
-          ```
+   - index.html 页引入
+
+     ```
+     <script src="../less.js/2.5.3/less.min.js"></script>
+
+     .demo3 {
+         background: @bg-color;
+         }
+     ```
+
+   - 应用页
+     ```
+         changeThemefun3(val) {
+         console.log("changeThemefun:", val);
+         window.less
+             .modifyVars({
+             // 调用 `less.modifyVars` 方法来改变变量值
+             "@bg-color": val
+             })
+             .then(() => {
+             console.log("修改成功");
+             });
+         },
+     ```
 
 4. 通过 css 的自定义变量
 
@@ -111,8 +114,4 @@
 .demo4 {
   background-color: var(--bg-color);
 }
-```
-
-```
-
 ```
